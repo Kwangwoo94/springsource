@@ -1,6 +1,19 @@
 package com.spring.poly;
 
 public class SamsungTV implements TV {
+	
+	private Speaker speaker;
+	
+	public SamsungTV() {}
+	
+	public SamsungTV(Speaker speaker) {
+		super();
+		this.speaker = speaker;
+		System.out.println("SamsungTV - °´Ã¼ »ý¼º");
+	}
+	public void setSpeaker(Speaker speaker) {
+		this.speaker = speaker;
+	}
 
 	@Override
 	public void turnOn() {
@@ -14,12 +27,12 @@ public class SamsungTV implements TV {
 
 	@Override
 	public void soundUp() {
-		System.out.println("SamsungTV - º¼·ý Up");
+		speaker.volumeUp();
 	}
 
 	@Override
 	public void soundDown() {
-		System.out.println("SamsungTV - º¼·ý Down");
+		speaker.volumeDown();
 	}
 
 }
